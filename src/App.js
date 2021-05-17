@@ -18,11 +18,11 @@ class App extends React.Component {
 		};
 
 	dbAdd = (repo) => {
-			db.collection('repos_TEST2').add(repo);
+			db.collection('repos').add(repo);
 	}
 
 	dbUpdate = async (repo) => {
-			db.collection('repos_TEST')
+			db.collection('reposT')
 					.doc({ id: repo.id })
 					.update({
 					})
@@ -32,7 +32,7 @@ class App extends React.Component {
 			db.collection('repos_TEST2').doc({ id: id }).delete();
 	}
 	async componentDidMount() {
-		const repos = await db.collection('repos_TEST2').get()
+		const repos = await db.collection('repos2').get()
 		const versionCheck = await Promise.all(repos.map( async (repo) => {
 					const newVersion = await this.getRelease(repo);
 					const newRel = newVersion.release.id;
@@ -101,12 +101,12 @@ class App extends React.Component {
 	}
 
 	onUpdateView	= async (repo) => {
-			const updateRepo = await db.collection('repos_TEST2')
+			const updateRepo = await db.collection('repos')
 					.doc({ id: repo.id })
 					.update({
 							isNew: false
 					})
-			const repos = await db.collection('repos_TEST2').get()
+			const repos = await db.collection('repos').get()
 			this.setState({ repos: repos })
 	}
 
