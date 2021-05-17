@@ -36,3 +36,84 @@
     transform: rotate(360deg);
   }
 }
+
+.grid-container {
+  padding: 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "list detail detail detail"
+    "list detail detail detail"
+    "list detail detail detail";
+}
+.list-container {
+  position: relative;
+  display: block;
+
+  padding: 3px;
+  margin: 3px;
+  border: 3px solid black;
+
+}
+
+.search {
+  padding: 1px;
+  margin: 1px;
+ float: left;
+ width: 100%;  
+}
+.list-item {
+  display: flex;
+  padding: 1px;
+  margin: 1px;
+  border: 1px solid gray;
+}
+.detail-container { 
+  padding: 20px;
+  margin: 3px;
+  grid-area: detail; 
+  border: 3px solid black;
+}
+
+.repo-name {
+  float: left;
+  padding: 1px;
+  margin: 1px;
+  border: 1px solid gray;
+}
+
+.repo-name:hover {
+    background-color: gray;
+}
+
+.repo-owner {
+  float: right;
+  padding: 1px;
+  margin: 1px;
+  border: 1px solid gray;
+}
+
+.repo-version {
+  float: right;
+  padding: 1px;
+  margin: 1px;
+  border: 1px solid gray;
+}
+
+.repo-new {
+  margin-left: auto;
+  padding: 1px;
+  margin: 1px;
+  border: 1px solid gray;
+  background-color: green;
+}
+
+.repo-button {
+  margin: 1px;
+  margin-left: auto;
+  right: 0;
+  background-color: red;
+
+}
